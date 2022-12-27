@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MeCa Trader 2021</title>
+    <link rel="icon" href="icon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      type="text/javascript"
+      src="https://canvasjs.com/assets/script/canvasjs.min.js"
+    ></script>
+    <script type="text/javascript" src="render.js"></script>
+  </head>
+  <body onload="init()">
+    <div id="main">
+      <h1>Symbol Pair</h1>
+      <input type="text" id="symbolPair" value="BTCUSDT" />
+
+      <h1>Interval</h1>
+      <label class="container"
+        >1m
+        <input
+          type="radio"
+          checked="checked"
+          name="radio"
+          onchange="intervalChanged('1m');"
+        />
+        <span class="checkmark"></span>
+      </label>
+      <label class="container"
+        >5m
+        <input type="radio" name="radio" onchange="intervalChanged('5m');" />
+        <span class="checkmark"></span>
+      </label>
+      <label class="container"
+        >15m
+        <input type="radio" name="radio" onchange="intervalChanged('15m');" />
+        <span class="checkmark"></span>
+      </label>
+      <label class="container"
+        >1h
+        <input type="radio" name="radio" onchange="intervalChanged('1h');" />
+        <span class="checkmark"></span>
+      </label>
+      <label class="container"
+        >4h
+        <input type="radio" name="radio" onchange="intervalChanged('4h');" />
+        <span class="checkmark"></span>
+      </label>
+      <label class="container"
+        >1d
+        <input type="radio" name="radio" onchange="intervalChanged('1d');" />
+        <span class="checkmark"></span>
+      </label>
+      <label class="container"
+        >3d
+        <input type="radio" name="radio" onchange="intervalChanged('3d');" />
+        <span class="checkmark"></span>
+      </label>
+      <label class="container"
+        >1w
+        <input type="radio" name="radio" onchange="intervalChanged('1w');" />
+        <span class="checkmark"></span>
+      </label>
+      <label class="container"
+        >1M
+        <input type="radio" name="radio" onchange="intervalChanged('1M');" />
+        <span class="checkmark"></span>
+      </label>
+      <br />
+      <button class="button" onclick="drawCandles()">Draw</button>
+    </div>
+    <div id="chartContainer" style="height: 500px; width: 100%"></div>
+    <table id="candles"></table>
+    <table id="matrix"></table>
+  </body>
+</html>
